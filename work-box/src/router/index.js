@@ -1,27 +1,25 @@
 import {createRouter, createWebHashHistory} from "vue-router";
+import HomePage from "../components/page/HomePage.vue";
+import TimeStamp from "../components/page/TimeStamp.vue";
+import JsonFormat from "../components/page/JsonFormat.vue";
+
+export const constantRouter = [
+    {
+        path:'/',
+        component:HomePage
+    },
+    {
+        path:'/timeStampChange',
+        component: TimeStamp
+    },
+    {
+        path:'/jsonFormat',
+        component: JsonFormat
+    }
+]
 
 const router = createRouter({
     history:createWebHashHistory(),
-    routes: [
-        {
-            path: '/',
-            component: () => import('@/views/layout/index.vue'),
-            children: [
-                {
-                  path:'',
-                  component:()=>import('@/views/Home/index.vue')
-                },
-                {
-                    path: '/timeStampChange',
-                    component: () => import('@/views/utils/TimeStamp.vue')
-                },
-                {
-                    path: '/jsonFormat',
-                    component: () => import('@/views/utils/JsonFormat.vue')
-                }
-            ]
-        },
-    ]
-});
-
+    routes: constantRouter,
+})
 export default router
