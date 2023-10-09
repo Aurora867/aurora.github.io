@@ -1,6 +1,5 @@
 <script setup>
 import {reactive} from "vue";
-import MyHeader from "./MyHeader.vue";
 
 const time = reactive({
   timeStamp: '',
@@ -21,13 +20,10 @@ function CurrToUnix(CurrTime) {
 <template>
   <div class="common-layout">
     <el-container>
-      <el-header>
-        <MyHeader/>
-      </el-header>
       <el-main>
         <div class="main">
           <div class="top" style="display: flex;height: auto">
-            <img src="src/assets/time.png" alt="图片" class="box">
+            <img src="../../assets/img/time.png" alt="图片" class="box">
             <span class="explain">Unix时间戳和北京时间的互相转化</span>
           </div>
           <el-form
